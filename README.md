@@ -1,5 +1,7 @@
 # DNS server build
 # Description:
+This script is useful for individuals who want to have control over DNS resolution on their network, allowing them to block specific domains (such as ads, trackers, or malicious sites) and log DNS queries for analysis. It also provides a customizable access denied page that is displayed when a blocked domain is accessed. This setup can be particularly beneficial for enhancing privacy, security, and control over internet access on home networks or small business environments.
+
 This script sets up a Raspberry Pi to act as a DNS server with Pi-hole-like functionality and a local Apache server for displaying an access denied page. 
 It configures dnsmasq to forward DNS queries to OpenDNS servers while allowing for the blocking of specific domains and logging DNS queries. 
 Additionally, it creates a visually appealing access denied page with a Matrix-style effect using HTML and JavaScript.
@@ -17,7 +19,6 @@ Make the script executable:
 Then run the script:
 
 ```sudo ./dns.sh``` or ```sudo bash dns.sh``` 
-This script is useful for individuals who want to have control over DNS resolution on their network, allowing them to block specific domains (such as ads, trackers, or malicious sites) and log DNS queries for analysis. It also provides a customizable access denied page that is displayed when a blocked domain is accessed. This setup can be particularly beneficial for enhancing privacy, security, and control over internet access on home networks or small business environments.
 
 # Process Overview:
 
