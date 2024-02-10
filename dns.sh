@@ -4,11 +4,16 @@
 sudo apt-get update
 sudo apt-get install -y dnsmasq apache2
 
+# gets ip variable for dns servers
+ipVariable=$(ip route get 1 | awk '{print $7}')
+
 # Configure dnsmasq
 sudo tee -a /etc/dnsmasq.conf > /dev/null <<EOT
+listen-address=$ipVariable
 server=208.67.222.222
 server=208.67.220.220
 log-queries
+log-facility=/var/log/dns.log
 address=/porn/127.0.0.1
 EOT
 
