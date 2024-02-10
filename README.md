@@ -5,6 +5,18 @@ It configures dnsmasq to forward DNS queries to OpenDNS servers while allowing f
 Additionally, it creates a visually appealing access denied page with a Matrix-style effect using HTML and JavaScript.
 
 # Usage:
+
+Create a local copy of the script.
+
+```wget https://raw.githubusercontent.com/BwithE/dns/main/dns.sh```
+
+Make the script executable:
+
+```sudo chmod +x dns.sh```
+
+Then run the script:
+
+```sudo ./dns.sh``` or ```sudo bash dns.sh``` 
 This script is useful for individuals who want to have control over DNS resolution on their network, allowing them to block specific domains (such as ads, trackers, or malicious sites) and log DNS queries for analysis. It also provides a customizable access denied page that is displayed when a blocked domain is accessed. This setup can be particularly beneficial for enhancing privacy, security, and control over internet access on home networks or small business environments.
 
 # Process Overview:
