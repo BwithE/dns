@@ -4,10 +4,14 @@
 sudo apt-get update
 sudo apt-get install -y dnsmasq apache2
 
-# configure dnsmasq
-echo "server=208.67.222.222" | sudo tee -a /etc/dnsmasq.conf
-echo "server=208.67.220.220" | sudo tee -a /etc/dnsmasq.conf
-echo "log-queries" | sudo tee -a /etc/dnsmasq.conf
+# Configure dnsmasq
+sudo tee -a /etc/dnsmasq.conf > /dev/null <<EOT
+server=208.67.222.222
+server=208.67.220.220
+log-queries
+address=/porn/127.0.0.1
+EOT
+
 
 # set up local Apache server with access denied page
 sudo mkdir -p /var/www/html
@@ -17,7 +21,7 @@ sudo tee /var/www/html/index.html > /dev/null <<EOT
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Access Denied</title>
+    <title>Matrix Effect</title>
     <style>
         body {
             background-color: black;
@@ -99,5 +103,7 @@ sudo tee /var/www/html/index.html > /dev/null <<EOT
 </html>
 EOT
 
+systemctl stop systemd-resolved
+systemctl disable systemd-resolved
 # restart dnsmasq and Apache
 sudo systemctl restart dnsmasq apache2
