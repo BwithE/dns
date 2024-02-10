@@ -27,7 +27,7 @@ sudo tee /var/www/html/index.html > /dev/null <<EOT
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matrix Effect</title>
+    <title>Access Denied</title>
     <style>
         body {
             background-color: black;
